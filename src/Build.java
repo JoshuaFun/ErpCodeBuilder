@@ -17,24 +17,26 @@ public class Build {
 //		demo.addListObj("l3");
 //	    FreeMarkerEngine.buildDemo(demo, TEMP_PATH);
 		
-//		PageQueryJson model = new PageQueryJson();
-//		model.setProcName("demo_query");
-//		model.setDevUserName("jun");
-//		model.setDevDate("20150901");
-//		model.setProcMsg("demo演示");
-//		model.putFormParamsObj("tcRowid", "number(18)");
-//		model.putFormParamsObj("tcCode", "varchar2(50)");
-//		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
-		
-		ProcJson model = new ProcJson();
-		model.setProcName("demo_save");
+		PageQueryJson model = new PageQueryJson();
+		model.setProcName("demo_query");
 		model.setDevUserName("jun");
 		model.setDevDate("20150901");
 		model.setProcMsg("demo演示");
 		model.putFormParamsObj("tcRowid", "number(18)");
 		model.putFormParamsObj("tcCode", "varchar2(50)");
-		model.putFormParamsArrayObj("rowid", "array_varchar2_50");
-		FreeMarkerEngine.buildProcJson(model,TEMP_PATH);
+		model.setStorePermission(false);
+		model.setPluPermission(true);
+		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
+		
+//		ProcJson model = new ProcJson();
+//		model.setProcName("demo_save");
+//		model.setDevUserName("jun");
+//		model.setDevDate("20150901");
+//		model.setProcMsg("demo演示");
+//		model.putFormParamsObj("tcRowid", "number(18)");
+//		model.putFormParamsObj("tcCode", "varchar2(50)");
+//		model.putFormParamsArrayObj("rowid", "array_varchar2_50");
+//		FreeMarkerEngine.buildProcJson(model,TEMP_PATH);
 		
 //		ProcQueryJson model = new ProcQueryJson();
 //		model.setProcName("demo_query");

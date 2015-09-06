@@ -3,11 +3,17 @@ create or replace procedure p_${model.procName}_bro(
 <#list model.formParams?keys as key>
 ${'\t'}${'\t'}${'\t'}    a_${key}            in <#if model.formParams[key]?index_of("number")!=-1>number<#else>varchar2</#if>,
 </#list>
-${'\t'}${'\t'}${'\t'}    a_userTcRowid in number,
-${'\t'}${'\t'}${'\t'}    a_storePermission in varchar2,
-${'\t'}${'\t'}${'\t'}    a_storeRowidArray in array_num,
 ${'\t'}${'\t'}${'\t'}    a_start	in varchar2,
 ${'\t'}${'\t'}${'\t'}    a_limit	in varchar2,
+${'\t'}${'\t'}${'\t'}    a_userTcRowid in number,
+<#if model.storePermission>
+${'\t'}${'\t'}${'\t'}    a_storePermission   in varchar2,
+${'\t'}${'\t'}${'\t'}    a_storeRowidArray   in array_num,
+<#else></#if>
+<#if model.pluPermission>
+${'\t'}${'\t'}${'\t'}    a_pluRowidRrray     in array_num,
+${'\t'}${'\t'}${'\t'}    a_pluSQL            in varchar2,
+<#else></#if>
 ${'\t'}${'\t'}${'\t'}    a_out_count out number,
 ${'\t'}${'\t'}${'\t'}    a_out_cursor out sys_refcursor) is
   /*
