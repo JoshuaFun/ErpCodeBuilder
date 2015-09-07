@@ -20,12 +20,11 @@ public class Build {
 		PageQueryJson model = new PageQueryJson();
 		model.setProcName("demo_query");
 		model.setDevUserName("jun");
-		model.setDevDate("20150901");
-		model.setProcMsg("demo演示");
+		model.setDevDate("20150907");
+		model.setProcMsg("demo_查询");
 		model.putFormParamsObj("tcRowid", "number(18)");
-		model.putFormParamsObj("tcCode", "varchar2(50)");
-		model.setStorePermission(false);
-		model.setPluPermission(true);
+		model.putFormParamsObj("tcCode", "varchar2(60)");
+		model.putFormParamsObj("tcName", "varchar2(100)");
 		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
 		
 //		ProcJson model = new ProcJson();

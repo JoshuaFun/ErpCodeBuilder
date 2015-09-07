@@ -37,10 +37,23 @@ begin
   	</#if>
   </#list>
   );
-  
-  v_sql_select := 'select 1';
-  v_sql_fromWhere := ' from dual';
-  
+  --select
+  v_sql_select := '
+  select 1';
+  --from
+  v_sql_fromWhere := '
+   from dual
+  where 1=1';
+  --where
+  <#list model.formParams?keys as key>
+  if a_${key} is not null then
+    v_sql_fromWhere := v_sql_fromWhere || ' 
+    and t.tc_${key?substring(2)?lower_case}} like ''%'||a_${key}||'%''';
+  end if;
+  </#list>
+  --order
+  v_sql_order := '
+   order by 1';
   --分页起始start.结束limit
   v_keyArray   := new array_varchar2_50();
   v_valueArray := new array_varchar2_50();
