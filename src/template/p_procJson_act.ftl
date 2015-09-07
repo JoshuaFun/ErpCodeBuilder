@@ -3,7 +3,7 @@ create or replace procedure p_${model.procName}_act(
 ${'\t'}${'\t'}${'\t'}    a_keyArray         in array_varchar2_50,
 ${'\t'}${'\t'}${'\t'}    a_valueArray       in array_varchar2_50,
 <#list model.formParamsArray?keys as key>
-${'\t'}${'\t'}${'\t'}    a_${key}_array in ${(model.formParamsArray[key])},
+${'\t'}${'\t'}${'\t'}    a_${key}Array in ${(model.formParamsArray[key])},
 </#list>
 ${'\t'}${'\t'}${'\t'}    a_out_success       out varchar2,
 ${'\t'}${'\t'}${'\t'}    a_out_msg           out varchar2,
@@ -18,7 +18,7 @@ ${'\t'}${'\t'}${'\t'}    a_out_valueArray    out array_varchar2_50) is
   v_${key} ${(model.formParams[key])};
   </#list>
   --内置参数
-  v_userRowid number;
+  v_userTcRowid number;
   --返回值
   v_out_rtn varchar2(100);
 begin
@@ -33,7 +33,7 @@ begin
   v_${key},
   </#list>
   <#list model.formParamsArray?keys as key>
-  a_${key}_array,
+  a_${key}Array,
   </#list>
   v_userTcRowid,
   v_out_rtn,

@@ -4,7 +4,7 @@ create or replace procedure p_${model.procName}_bro(
 ${'\t'}${'\t'}${'\t'}    a_${key} in <#if model.formParams[key]?index_of("number")!=-1>number<#else>varchar2</#if>,
 </#list>
 <#list model.formParamsArray?keys as key>
-${'\t'}${'\t'}${'\t'}    a_${key}_array in array_varchar2_50,
+${'\t'}${'\t'}${'\t'}    a_${key}Array in array_varchar2_50,
 </#list>
 ${'\t'}${'\t'}${'\t'}    a_userTcRowid       in number,
 ${'\t'}${'\t'}${'\t'}    a_out_rtn         out number,
@@ -32,9 +32,9 @@ begin
   raise_application_error(-20000,'测试数组参数：<br>'||
   <#list model.formParamsArray?keys as key>
 	<#if key_index < model.formParamsArray?size-1 >
-		'v_${key}_array:' || a_${key}_array(1) ||'|<br>'||
+		'v_${key}_array:' || a_${key}Array(1) ||'|<br>'||
 	<#else>
-		'v_${key}_array:' || a_${key}_array(1) ||'|'
+		'v_${key}_array:' || a_${key}Array(1) ||'|'
 	</#if>
   </#list>
   );

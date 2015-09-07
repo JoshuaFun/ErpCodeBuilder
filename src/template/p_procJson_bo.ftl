@@ -4,7 +4,7 @@ create or replace procedure p_${model.procName}_bo(
 ${'\t'}${'\t'}${'\t'}    a_${key}            in <#if model.formParams[key]?index_of("number")!=-1>number<#else>varchar2</#if>,
 </#list>
 <#list model.formParamsArray?keys as key>
-${'\t'}${'\t'}${'\t'}    a_${key}_array in ${(model.formParamsArray[key])},
+${'\t'}${'\t'}${'\t'}    a_${key}Array in ${(model.formParamsArray[key])},
 </#list>
 ${'\t'}${'\t'}${'\t'}    a_userTcRowid		 in number,
 ${'\t'}${'\t'}${'\t'}    a_out_rtn           out number,
@@ -20,7 +20,7 @@ begin
   a_${key},
   </#list>
   <#list model.formParamsArray?keys as key>
-  a_${key}_array,
+  a_${key}Array,
   </#list>
   a_userTcRowid,
   a_out_rtn,
