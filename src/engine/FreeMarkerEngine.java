@@ -91,4 +91,10 @@ public class FreeMarkerEngine
 		FreeMarkerEngine.analysisTemplate("p_procQueryJson_bro.ftl","utf-8",tempPath,root);
 		FreeMarkerEngine.analysisTemplate("p_procQueryJson_act.ftl","utf-8",tempPath,root);
 	}
+	
+	public static void buildExportFile(Object model, String tempPath){
+		Map<String, Object> root = new HashMap<String, Object>();
+		root.put("model", model);
+		FreeMarkerEngine.analysisTemplate("p_exportFile_act.ftl","utf-8",tempPath,root);
+	}
 }

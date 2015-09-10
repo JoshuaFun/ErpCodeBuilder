@@ -1,3 +1,4 @@
+import model.ExportFile;
 import model.PageQueryJson;
 import model.ProcJson;
 import model.ProcQueryJson;
@@ -17,6 +18,16 @@ public class Build {
 //		demo.addListObj("l3");
 //	    FreeMarkerEngine.buildDemo(demo, TEMP_PATH);
 		
+//		增、删、改
+//		ProcJson model = new ProcJson();
+//		model.setProcName("demo_del");
+//		model.setDevUserName("jun");
+//		model.setDevDate("20150907");
+//		model.setProcMsg("demo_删除");
+//		model.putFormParamsArrayObj("rowid", "array_varchar2_50");
+//		FreeMarkerEngine.buildProcJson(model,TEMP_PATH);
+	
+//		查询
 //		PageQueryJson model = new PageQueryJson();
 //		model.setProcName("demo_query");
 //		model.setDevUserName("jun");
@@ -27,14 +38,7 @@ public class Build {
 //		model.putFormParamsObj("tcName", "varchar2(100)");
 //		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
 		
-		ProcJson model = new ProcJson();
-		model.setProcName("demo_del");
-		model.setDevUserName("jun");
-		model.setDevDate("20150907");
-		model.setProcMsg("demo_删除");
-		model.putFormParamsArrayObj("rowid", "array_varchar2_50");
-		FreeMarkerEngine.buildProcJson(model,TEMP_PATH);
-		
+//		单条记录读取
 //		ProcQueryJson model = new ProcQueryJson();
 //		model.setProcName("demo_query");
 //		model.setDevUserName("jun");
@@ -43,6 +47,14 @@ public class Build {
 //		model.putFormParamsObj("tcRowid", "number(18)");
 //		model.putFormParamsObj("tcCode", "varchar2(100)");
 //		FreeMarkerEngine.buildProcQueryJson(model,TEMP_PATH);
+		
+//		导出
+		ExportFile model = new ExportFile();
+		model.setProcName("demo");
+		model.setDevUserName("jun");
+		model.setDevDate("20150907");
+		model.setProcMsg("demo演示_导出");
+		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
 		
 	}
 }
