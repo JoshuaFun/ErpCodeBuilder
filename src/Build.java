@@ -2,6 +2,7 @@ import model.ExportFile;
 import model.PageQueryJson;
 import model.ProcJson;
 import model.ProcQueryJson;
+import model.ProcUpFile;
 import engine.FreeMarkerEngine;
 
 public class Build {
@@ -49,12 +50,24 @@ public class Build {
 //		FreeMarkerEngine.buildProcQueryJson(model,TEMP_PATH);
 		
 //		导出
-		ExportFile model = new ExportFile();
+//		ExportFile model = new ExportFile();
+//		model.setProcName("demo");
+//		model.setDevUserName("jun");
+//		model.setDevDate("20150907");
+//		model.setProcMsg("demo演示_导出");
+////		model.setStorePermission(true);
+////		model.setPluPermission(true);
+//		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
+		
+//		导入
+		ProcUpFile model = new ProcUpFile();
 		model.setProcName("demo");
 		model.setDevUserName("jun");
 		model.setDevDate("20150907");
-		model.setProcMsg("demo演示_导出");
-		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
+		model.setProcMsg("demo演示_导入");
+//		model.setStorePermission(true);
+//		model.setPluPermission(true);
+		FreeMarkerEngine.buildProcUpFile(model,TEMP_PATH);
 		
 	}
 }

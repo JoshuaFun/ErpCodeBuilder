@@ -97,4 +97,12 @@ public class FreeMarkerEngine
 		root.put("model", model);
 		FreeMarkerEngine.analysisTemplate("p_exportFile_act.ftl","utf-8",tempPath,root);
 	}
+	
+	public static void buildProcUpFile(Object model, String tempPath){
+		Map<String, Object> root = new HashMap<String, Object>();
+		root.put("model", model);
+		FreeMarkerEngine.analysisTemplate("p_procUpFile_ins_bro.ftl","utf-8",tempPath,root);
+		FreeMarkerEngine.analysisTemplate("p_procUpFile_chk_bro.ftl","utf-8",tempPath,root);
+		FreeMarkerEngine.analysisTemplate("p_procUpFile_act.ftl","utf-8",tempPath,root);
+	}
 }
