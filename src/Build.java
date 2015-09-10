@@ -24,27 +24,27 @@ public class Build {
 //		model.setProcName("demo_del");
 //		model.setDevUserName("jun");
 //		model.setDevDate("20150907");
-//		model.setProcMsg("demo_删除");
+//		model.setProcMsg("demo演示_删除");
 //		model.putFormParamsArrayObj("rowid", "array_varchar2_50");
 //		FreeMarkerEngine.buildProcJson(model,TEMP_PATH);
 	
-//		查询
+//		翻页查询
 //		PageQueryJson model = new PageQueryJson();
 //		model.setProcName("demo_query");
 //		model.setDevUserName("jun");
 //		model.setDevDate("20150907");
-//		model.setProcMsg("demo_查询");
+//		model.setProcMsg("demo演示_翻页查询");
 //		model.putFormParamsObj("tcRowid", "number(18)");
 //		model.putFormParamsObj("tcCode", "varchar2(60)");
 //		model.putFormParamsObj("tcName", "varchar2(100)");
 //		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
 		
-//		单条记录读取
+//		非翻页查询
 //		ProcQueryJson model = new ProcQueryJson();
 //		model.setProcName("demo_query");
 //		model.setDevUserName("jun");
 //		model.setDevDate("20150901");
-//		model.setProcMsg("demo演示");
+//		model.setProcMsg("demo演示_非翻页查询");
 //		model.putFormParamsObj("tcRowid", "number(18)");
 //		model.putFormParamsObj("tcCode", "varchar2(100)");
 //		FreeMarkerEngine.buildProcQueryJson(model,TEMP_PATH);
