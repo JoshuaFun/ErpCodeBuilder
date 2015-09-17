@@ -48,7 +48,7 @@ begin
   <#list model.formParams?keys as key>
   if a_${key} is not null then
     v_sql_fromWhere := v_sql_fromWhere || ' 
-    and t.tc_${key?substring(2)?lower_case}} like ''%'||a_${key}||'%''';
+    and t.tc_${key?substring(2)?lower_case} like ''%'||a_${key}||'%''';
   end if;
   </#list>
   --order
