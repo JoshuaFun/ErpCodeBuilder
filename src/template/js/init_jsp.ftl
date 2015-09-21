@@ -28,7 +28,7 @@ var App_Path = '<%=WebContextUtil.getWebRoot(request)%>';
 			sb.append("\n");
 		}
 		boolean _hasPermission=false;
-		_hasPermission=com.ray.baseframework.tools.PermissionUtil.isHasPermission("erp.${model.moduleName}Json."+buttons[i]);
+		_hasPermission=com.ray.baseframework.tools.PermissionUtil.isHasPermission("erp.${model.moduleName?uncap_first}Json."+buttons[i]);
 		if(_hasPermission){
 			sb.append(buttons[i]).append(" : 1");
 		}else{
@@ -77,19 +77,19 @@ var App_Path = '<%=WebContextUtil.getWebRoot(request)%>';
 <script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/ext/epo/Ec.ExpressCompany.Combox.js?<%=global_cssJsVersion %>"></script>
 <script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/ext/epo/Epo.ExpExcel.js?<%=global_cssJsVersion %>"></script>
 <!-- 页面初始化 -->
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.ButtonAble.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.URL.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.Function.Comm.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.Function.Handler.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.Function.Listeners.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.View.Bottom.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.View.Center.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.View.Center.Grid.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.View.Top.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.View.Top.Toolbar.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.View.Top.Form.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.Viewport.js?<%=global_cssJsVersion %>"></script>
-<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?lower_case}/js/Epo.Erp.${model.moduleName}.Init.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.ButtonAble.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.URL.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.Function.Comm.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.Function.Handler.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.Function.Listeners.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.View.Bottom.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.View.Center.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.View.Center.Grid.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.View.Top.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.View.Top.Toolbar.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.View.Top.Form.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.Viewport.js?<%=global_cssJsVersion %>"></script>
+<script type="text/javascript" src="<%=WebContextUtil.getWebRoot(request)%>/erp/${model.moduleName?uncap_first}/js/Epo.Erp.${model.moduleName}.Init.js?<%=global_cssJsVersion %>"></script>
 </head>
 <body topmargin="0" leftmargin="0"></body>
 </html>

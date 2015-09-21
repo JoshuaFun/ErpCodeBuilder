@@ -24,7 +24,7 @@ Epo.Erp.${model.moduleName}.View.Center.Grid = Ext.extend(Ext.grid.EditorGridPan
 		});
 	},
 	setStoreDone : function(){
-		this.url = Epo_Erp_${model.moduleName}['URL']['${model.moduleName?lower_case}_query'];
+		this.url = Epo_Erp_${model.moduleName}['URL']['${model.moduleName?uncap_first}_query'];
 		this.store = new Epo.Ux.Store({
 			autoLoad:false,
 			pruneModifiedRecords:true,

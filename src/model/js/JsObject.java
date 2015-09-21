@@ -10,6 +10,9 @@ public class JsObject {
 	private Map<String, String> formItems = new LinkedHashMap<String, String>();//form Items
 	private List<String> gridColumnMappingList = new ArrayList<String>();
 
+	public String getModuleNameLowerFirst() {
+		return moduleName.replaceFirst(moduleName.substring(0, 1),moduleName.substring(0, 1).toLowerCase()) ;
+	}
 	public String getModuleName() {
 		return moduleName;
 	}

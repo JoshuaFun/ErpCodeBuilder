@@ -70,7 +70,7 @@ public class FreeMarkerEngine {
 	/**
 	 * 解析js模版
 	 * @param moduleName
-	 * 			     模块名称
+	 * 			     模块目录名称
 	 * @param fileName
 	 *            文件名称
 	 * @param suffix
@@ -111,7 +111,7 @@ public class FreeMarkerEngine {
 			 * 创建目录及文件
 			 */
 			//创建模块目录
-			String dirPath = "C:" + File.separator + "CodeTemp" + File.separator + moduleName.toLowerCase();
+			String dirPath = "C:" + File.separator + "CodeTemp" + File.separator + moduleName;
 			//创建模块子目录js
 			if (suffix.equals("js")) dirPath = dirPath + File.separator + "js";
 			createDirs(dirPath);
@@ -194,20 +194,20 @@ public class FreeMarkerEngine {
 		Map<String, Object> root = new HashMap<String, Object>();
 		root.put("model", model);
 		//js
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".ButtonAble", "js", "ButtonAble_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".Function.Comm", "js", "Function_Comm_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".Function.Handler", "js", "Function_Handler_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".Function.Listeners", "js", "Function_Listeners_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".URL", "js", "URL_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".Init", "js", "Init_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Bottom", "js", "View_Bottom_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Center.Grid", "js", "View_Center_Grid_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Center", "js", "View_Center_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Top.Form", "js", "View_Top_Form_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Top.Toolbar", "js", "View_Top_Toolbar_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Top", "js", "View_Top_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".Viewport", "js", "Viewport_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".ButtonAble", "js", "ButtonAble_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Comm", "js", "Function_Comm_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Handler", "js", "Function_Handler_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Listeners", "js", "Function_Listeners_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".URL", "js", "URL_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Init", "js", "Init_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Bottom", "js", "View_Bottom_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Center.Grid", "js", "View_Center_Grid_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Center", "js", "View_Center_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top.Form", "js", "View_Top_Form_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top.Toolbar", "js", "View_Top_Toolbar_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top", "js", "View_Top_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Viewport", "js", "Viewport_js.ftl", "utf-8", tempPath, root);
 		//jsp
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "init", "jsp", "init_jsp.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "init", "jsp", "init_jsp.ftl", "utf-8", tempPath, root);
 	}
 }

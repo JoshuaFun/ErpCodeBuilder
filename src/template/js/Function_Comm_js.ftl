@@ -6,7 +6,7 @@ Epo.Erp.${model.moduleName}.Function.Comm.query = function() {
 };
 //导出
 Epo.Erp.${model.moduleName}.Function.Comm.exp = function() {
-	var url = Epo_Erp_${model.moduleName}['URL']['${model.moduleName?lower_case}_exp']
+	var url = Epo_Erp_${model.moduleName}['URL']['${model.moduleName?uncap_first}_exp']
 	+'&start=0'
 	+'&limit=99999'
 	<#list model.formItems?keys as key>
@@ -63,7 +63,7 @@ Epo.Erp.${model.moduleName}.Function.Comm.del = function(_rowSelections) {
 	//后台删除记录
 	if (rowidArr.length > 0){
 		Epo.Ext.Utils.Net.formSubmit(null,{
-			url : Epo_Erp_${model.moduleName}['URL']['${model.moduleName?lower_case}_del'],
+			url : Epo_Erp_${model.moduleName}['URL']['${model.moduleName?uncap_first}_del'],
 			params : {_array_01_ : rowidArr},
 			successDone : function(_res){
 				if(_res.success == true){
@@ -82,7 +82,7 @@ Epo.Erp.${model.moduleName}.Function.Comm.save = function(_datas) {
 		_array_01_ : _getModifiedDatas(_datas)
 	};
 	Epo.Ext.Utils.Net.formSubmit(null,{
-		url : Epo_Erp_${model.moduleName}['URL']['${model.moduleName?lower_case}_save'],
+		url : Epo_Erp_${model.moduleName}['URL']['${model.moduleName?uncap_first}_save'],
 		params : params,
 		successDone : function(_res){
 			if(_res.success == true){
