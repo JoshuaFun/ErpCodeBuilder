@@ -1,12 +1,12 @@
-import model.ExportFile;
-import model.PageQueryJson;
-import model.ProcJson;
-import model.ProcQueryJson;
-import model.ProcUpFile;
+import model.proc.ExportFile;
+import model.proc.PageQueryJson;
+import model.proc.ProcJson;
+import model.proc.ProcQueryJson;
+import model.proc.ProcUpFile;
 import engine.FreeMarkerEngine;
 
 public class Build {
-	static String TEMP_PATH = "E:/projs/ProcCodeBuilder/bin/template";
+	static String TEMP_PATH = "E:/projs/ErpCodeBuilder/bin/template";
 	
 	public static void main(String[] args){
 //		Demo demo = new Demo();
@@ -60,14 +60,37 @@ public class Build {
 //		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
 		
 //		导入
-		ProcUpFile model = new ProcUpFile();
-		model.setProcName("demo");
-		model.setDevUserName("jun");
-		model.setDevDate("20150907");
-		model.setProcMsg("demo演示_导入");
-//		model.setStorePermission(true);
-//		model.setPluPermission(true);
-		FreeMarkerEngine.buildProcUpFile(model,TEMP_PATH);
+//		ProcUpFile model = new ProcUpFile();
+//		model.setProcName("demo");
+//		model.setDevUserName("jun");
+//		model.setDevDate("20150907");
+//		model.setProcMsg("demo演示_导入");
+////		model.setStorePermission(true);
+////		model.setPluPermission(true);
+//		FreeMarkerEngine.buildProcUpFile(model,TEMP_PATH);
 		
+		
+//		PageQueryJson model = new PageQueryJson();
+//		model.setProcName("itemext4_query");
+//		model.setDevUserName("jun");
+//		model.setDevDate("20150917");
+//		model.setProcMsg("REQ004 库存帐卡查询");
+//		model.putFormParamsObj("tcStoreCode", "varchar2(60)");
+//		model.putFormParamsObj("tcPluCode", "varchar2(60)");
+//		model.putFormParamsObj("tcColorCode", "varchar2(60)");
+//		model.putFormParamsObj("tcDateFrom", "varchar2(20)");
+//		model.putFormParamsObj("tcDateTo", "varchar2(20)");
+//		model.putFormParamsObj("tcSummeryType", "varchar2(1)");
+//		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
+		
+//		ExportFile model = new ExportFile();
+//		model.setProcName("itemext4");
+//		model.setDevUserName("jun");
+//		model.setDevDate("20150917");
+//		model.setProcMsg("REQ004 库存帐卡查询_导出");
+////		model.setStorePermission(true);
+////		model.setPluPermission(true);
+//		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
+
 	}
 }

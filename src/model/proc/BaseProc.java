@@ -1,4 +1,4 @@
-package model;
+package model.proc;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

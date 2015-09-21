@@ -1,6 +1,6 @@
-package model;
+package model.proc;
 
-public class ExportFile extends BaseProc{
+public class PageQueryJson extends BaseProc{
 	private Boolean storePermission = false;
 	private Boolean pluPermission = false;
 	

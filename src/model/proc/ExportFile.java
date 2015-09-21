@@ -1,6 +1,6 @@
-package model;
+package model.proc;
 
-public class ProcUpFile extends BaseProc{
+public class ExportFile extends BaseProc{
 	private Boolean storePermission = false;
 	private Boolean pluPermission = false;
 	

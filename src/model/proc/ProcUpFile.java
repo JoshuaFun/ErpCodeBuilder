@@ -1,6 +1,6 @@
-package model;
+package model.proc;
 
-public class PageQueryJson extends BaseProc{
+public class ProcUpFile extends BaseProc{
 	private Boolean storePermission = false;
 	private Boolean pluPermission = false;
 	
