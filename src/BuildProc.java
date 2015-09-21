@@ -5,8 +5,8 @@ import model.proc.ProcQueryJson;
 import model.proc.ProcUpFile;
 import engine.FreeMarkerEngine;
 
-public class Build {
-	static String TEMP_PATH = "E:/projs/ErpCodeBuilder/bin/template";
+public class BuildProc {
+	static String TEMP_PATH = "E:/projs/ErpCodeBuilder/bin/template/proc";
 	
 	public static void main(String[] args){
 //		Demo demo = new Demo();
@@ -83,14 +83,14 @@ public class Build {
 //		model.putFormParamsObj("tcSummeryType", "varchar2(1)");
 //		FreeMarkerEngine.buildPageQueryJson(model,TEMP_PATH);
 		
-//		ExportFile model = new ExportFile();
-//		model.setProcName("itemext4");
-//		model.setDevUserName("jun");
-//		model.setDevDate("20150917");
-//		model.setProcMsg("REQ004 库存帐卡查询_导出");
-////		model.setStorePermission(true);
-////		model.setPluPermission(true);
-//		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
+		ExportFile model = new ExportFile();
+		model.setProcName("itemext4");
+		model.setDevUserName("jun");
+		model.setDevDate("20150917");
+		model.setProcMsg("REQ004 库存帐卡查询_导出");
+//		model.setStorePermission(true);
+//		model.setPluPermission(true);
+		FreeMarkerEngine.buildExportFile(model,TEMP_PATH);
 
 	}
 }

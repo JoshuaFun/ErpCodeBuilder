@@ -108,21 +108,21 @@ public class FreeMarkerEngine {
 			 */
 			Template template = config.getTemplate(templateName, templateEncoding);
 			/**
-			 * 创建js代码存放目录
+			 * 创建目录及文件
 			 */
 			//创建模块目录
 			String dirPath = "C:" + File.separator + "CodeTemp" + File.separator + moduleName.toLowerCase();
-			//创建模块js目录
+			//创建模块子目录js
 			if (suffix.equals("js")) dirPath = dirPath + File.separator + "js";
 			createDirs(dirPath);
-			//
-			File f = new File(dirPath + File.separator + fileName + "." + suffix);
-
+			//创建模版文件
+			String filePath = dirPath + File.separator + fileName + "." + suffix;
+			File f = new File(filePath);
+			System.out.println("创建文件："+filePath);
 			/**
 			 * 合并数据模型与模板
 			 */
 			Writer out=new FileWriter(f);//覆盖
-//			Writer out=new FileWriter(f,true);//追加
 			template.process(root, out);
 			out.flush();
 //			out.close();//注释掉后方可同时生成多个模版代码
@@ -139,7 +139,10 @@ public class FreeMarkerEngine {
 	 */
 	private static void createDirs(String dirPath) {
 		File dir =new File(dirPath);
-		if (!dir.exists() && !dir.isDirectory()) dir.mkdirs();  
+		if (!dir.exists() && !dir.isDirectory()) {
+			dir.mkdirs();  
+			System.out.println("创建层级目录：" + dirPath);
+		}
 	}
 	
 	//-----------------------------------------DEMO-------------------------------------------------------//
@@ -204,7 +207,7 @@ public class FreeMarkerEngine {
 		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Top.Toolbar", "js", "View_Top_Toolbar_js.ftl", "utf-8", tempPath, root);
 		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".View.Top", "js", "View_Top_js.ftl", "utf-8", tempPath, root);
 		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "Epo.Erp."+model.getModuleName()+".Viewport", "js", "Viewport_js.ftl", "utf-8", tempPath, root);
-//		//jsp
+		//jsp
 		FreeMarkerEngine.analysisTemplateJs(model.getModuleName(), "init", "jsp", "init_jsp.ftl", "utf-8", tempPath, root);
 	}
 }
