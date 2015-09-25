@@ -2,6 +2,7 @@
 create or replace procedure p_upload_xls_${model.procName}_act(
 ${'\t'}${'\t'}${'\t'}    a_keyArray         in array_varchar2_50,
 ${'\t'}${'\t'}${'\t'}    a_valueArray       in array_varchar2_50,
+${'\t'}${'\t'}${'\t'}    a_dataArray        in array_varchar2_50,--EXCEL内容，一行一串逗号隔开
 <#if model.storePermission>
 ${'\t'}${'\t'}${'\t'}    a_storePermission   in varchar2,
 ${'\t'}${'\t'}${'\t'}    a_storeRowidArray   in array_num,
