@@ -18,11 +18,11 @@ public class BuildJs {
 		JsObject model = new JsObject();
 		//必须首字母大写
 		model.setModuleName("DemoBase13");
-		//逗号相隔字符串，顺序必须依次为：header中文、dataIndex英文(驼峰命名)、mapping英文（对应sql select语句列别名）、editor(true/false)
+		//配置Grid，逗号相隔字符串，顺序必须依次为：header中文、dataIndex英文(驼峰命名)、mapping英文（对应sql select语句列别名）、editor(是否可编辑true/false)
 		model.addGridColumnMappingList("主键, tcRowid, tc_rowid, false");
 		model.addGridColumnMappingList("代号, tcCode, tc_code, true");
 		model.addGridColumnMappingList("名称, tcName, tc_name, true");
-		//key-value键值对，顺序必须依次为：objName英文(驼峰命名)， fieldLabel中文
+		//配置Form，key-value键值对，顺序必须依次为：objName英文(驼峰命名)， fieldLabel中文
 		model.putFormItems("tcRowid", "主键");
 		model.putFormItems("tcCode", "代号");
 		model.putFormItems("tcName", "名称");

@@ -3,7 +3,7 @@ create or replace procedure p_${model.procName}_bro(
 <#list model.formParams?keys as key>
 ${'\t'}${'\t'}${'\t'}    a_${key}            in <#if model.formParams[key]?index_of("number")!=-1>number<#else>varchar2</#if>,
 </#list>
-${'\t'}${'\t'}${'\t'}    a_user_rowid in number,
+${'\t'}${'\t'}${'\t'}    a_userTcRowid in number,
 ${'\t'}${'\t'}${'\t'}    a_out_cursor out sys_refcursor) is
   /*
   -- ${model.devUserName} ${model.devDate}

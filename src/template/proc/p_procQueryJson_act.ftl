@@ -1,7 +1,7 @@
 /*********************************************************************************PROC_ACTION*/
 create or replace procedure p_${model.procName}_act(
-${'\t'}${'\t'}${'\t'}    a_key_array         in array_varchar2_50,
-${'\t'}${'\t'}${'\t'}    a_value_array       in array_varchar2_50,
+${'\t'}${'\t'}${'\t'}    a_keyArray          in array_varchar2_50,
+${'\t'}${'\t'}${'\t'}    a_valueArray        in array_varchar2_50,
 ${'\t'}${'\t'}${'\t'}    a_out_success       out varchar2,
 ${'\t'}${'\t'}${'\t'}    a_out_msg           out varchar2,
 ${'\t'}${'\t'}${'\t'}    a_out_keyArray      out array_varchar2_50,
@@ -16,19 +16,19 @@ ${'\t'}${'\t'}${'\t'}    a_out_cursor        out sys_refcursor) is
   v_${key} ${(model.formParams[key])};
   </#list>
   --内置参数
-  v_user_rowid number;
+  v_userTcRowid number;
 begin
   --获取表单参数
   <#list model.formParams?keys as key>
-  v_${key} := f_get_value_by_key_in_array(a_key_array, a_value_array, '${key}');
+  v_${key} := f_get_value_by_key_in_array(a_keyArray, a_valueArray, '${key}');
   </#list>
-  v_user_rowid := f_get_value_by_key_in_array(a_key_array, a_value_array, 'userTcRowid');
+  v_userTcRowid := f_get_value_by_key_in_array(a_keyArray, a_valueArray, 'userTcRowid');
   --业务逻辑处理
   p_${model.procName}_bro(
   <#list model.formParams?keys as key>
   ${'\t'}${'\t'}v_${key},
   </#list>
-  ${'\t'}${'\t'}v_user_rowid,
+  ${'\t'}${'\t'}v_userTcRowid,
   ${'\t'}${'\t'}a_out_cursor);
   --返回信息标志
   a_out_success := 'true';

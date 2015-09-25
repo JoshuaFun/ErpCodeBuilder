@@ -1,5 +1,5 @@
 Ext.ns('Epo.Erp.${model.moduleName}.View');
-Epo.Erp.${model.moduleName}.View.Bottom = Ext.extend(Ext.Panel, {
+Epo.Erp.${model.moduleName}.View.Bottom = Ext.extend(Ext.form.FormPanel, {
 	id : '${model.moduleName}ViewBottom',
 	labelAlign:'right',
 	frame : true,
@@ -12,18 +12,13 @@ Epo.Erp.${model.moduleName}.View.Bottom = Ext.extend(Ext.Panel, {
 	//创建面板底部控件
 	setItemsDone : function() {
 		this.selectedOrders = new Ext.form.DisplayField({fieldLabel:'选中单数',width:100,labelStyle:'text-align:right',style:'padding-top:3px;'});
-		this.form = new Ext.form.FormPanel({
-			frame:false,
-			labelWidth:40,
-			region:'center',
-			split:true,
-			layout:'table',
-			border:false,
-			layoutConfig:{columns:2},
-			items:[
+		this.items = [{
+			layout : 'table',
+			border : false,
+			layoutConfig : {columns:4},
+			items : [
 				{layout:'form',border:false,items:[this.selectedOrders]}
 			]
-		});
-		this.items = [this.form];
+		}];
 	}
 });

@@ -24,6 +24,9 @@ ${'\t'}${'\t'}${'\t'}    a_out_info       out varchar2) is
   v_userid      varchar2(100);
   v_tempTable   varchar2(100);
   v_saveMode    varchar2(10);
+  <#list model.formParams?keys as key>
+  v_${key} ${(model.formParams[key])};
+  </#list>
   v_outColCount number(2);
   v_success     varchar2(100);
   v_msg         varchar2(3000);
@@ -31,6 +34,10 @@ begin
   a_success  := '1';
   a_message  := ' ';
   a_out_info := 'data';
+  --获取表单参数
+  <#list model.formParams?keys as key>
+  v_${key} := f_get_value_by_key_in_array(a_keyArray, a_valueArray, '${key}');
+  </#list>
   --导入方式
   v_saveMode := f_get_value_by_key_in_array(a_keyarray, a_valuearray, 'saveMode');
   --用户rowid
@@ -45,10 +52,22 @@ begin
                            v_success,
                            v_msg);
   ------------------------------------验证------------------------------------
-  p_upload_xls_${model.procName}_chk_bro(v_tempTable, v_saveMode, v_success, v_msg);
+  p_upload_xls_${model.procName}_chk_bro(
+  v_tempTable, 
+  v_saveMode, 
+  <#list model.formParams?keys as key>
+  v_${key},
+  </#list>
+  v_success, 
+  v_msg);
   ------------------------------------插入正式表------------------------------------
   if v_success = 'true' then
-    p_upload_xls_${model.procName}_ins_bro(v_tempTable, v_success);
+    p_upload_xls_${model.procName}_ins_bro(
+    v_tempTable,
+    <#list model.formParams?keys as key>
+    v_${key},
+    </#list>
+    v_success);
   end if;
   --返回结果
   if v_success = 'true' then
