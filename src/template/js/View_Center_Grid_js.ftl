@@ -83,11 +83,10 @@ Epo.Erp.${model.moduleName}.View.Center.Grid = Ext.extend(Ext.grid.EditorGridPan
 				}
 			}
 		});
-		this.tbar = new Ext.Toolbar({});
-		this.tbar.add(this.addButton);
-		this.tbar.add(this.delButton);
-		this.tbar.add(this.saveButton);
-		this.tbar.add(this.impButton);
+		this.tbar = [this.addButton,
+		             this.delButton,
+		             this.saveButton,
+		             this.impButton];
 	},
 	setBbarDone : function() {
 		this.bbar = new Ext.PagingToolbar({

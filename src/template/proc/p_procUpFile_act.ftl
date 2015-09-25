@@ -40,9 +40,9 @@ begin
   v_${key} := f_get_value_by_key_in_array(a_keyArray, a_valueArray, '${key}');
   </#list>
   --导入方式
-  v_saveMode := f_get_value_by_key_in_array(a_keyarray, a_valuearray, 'saveMode');
+  v_saveMode := f_get_value_by_key_in_array(a_keyArray, a_valueArray, 'saveMode');
   --用户rowid
-  v_userid := f_get_value_by_key_in_array(a_keyarray, a_valuearray, 'userId');
+  v_userid := f_get_value_by_key_in_array(a_keyArray, a_valueArray, 'userId');
   if v_userid is null then
     v_userid := 1;
   end if;
