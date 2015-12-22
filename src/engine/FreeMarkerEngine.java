@@ -83,9 +83,11 @@ public class FreeMarkerEngine {
 	 *            模板文件的路径
 	 * @param root
 	 *            数据模型根对象
+	 * @param sys
+	 *            操作系统标识(null为window, "mac"为MAC)
 	 */
 	@SuppressWarnings("deprecation")
-	public static void analysisTemplateJs(String moduleName, String fileName, String suffix, String templateName, String templateEncoding, String templatePath, Map<?, ?> root) {
+	public static void analysisTemplateJs(String moduleName, String fileName, String suffix, String templateName, String templateEncoding, String templatePath, Map<?, ?> root, String sys) {
 		try {
 			/**
 			 * 创建Configuration对象
@@ -111,7 +113,9 @@ public class FreeMarkerEngine {
 			 * 创建目录及文件
 			 */
 			//创建模块目录
-			String dirPath = "C:" + File.separator + "CodeTemp" + File.separator + moduleName;
+			String dirPath = "C:";
+			if (sys.equals("mac")) dirPath = "/Users/mac373/dev" ;
+			dirPath = dirPath + File.separator + "CodeTemp" + File.separator + moduleName;
 			//创建模块子目录js
 			if (suffix.equals("js")) dirPath = dirPath + File.separator + "js";
 			createDirs(dirPath);
@@ -194,20 +198,20 @@ public class FreeMarkerEngine {
 		Map<String, Object> root = new HashMap<String, Object>();
 		root.put("model", model);
 		//js
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".ButtonAble", "js", "ButtonAble_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Comm", "js", "Function_Comm_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Handler", "js", "Function_Handler_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Listeners", "js", "Function_Listeners_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".URL", "js", "URL_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Init", "js", "Init_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Bottom", "js", "View_Bottom_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Center.Grid", "js", "View_Center_Grid_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Center", "js", "View_Center_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top.Form", "js", "View_Top_Form_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top.Toolbar", "js", "View_Top_Toolbar_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top", "js", "View_Top_js.ftl", "utf-8", tempPath, root);
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Viewport", "js", "Viewport_js.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".ButtonAble", "js", "ButtonAble_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Comm", "js", "Function_Comm_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Handler", "js", "Function_Handler_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Function.Listeners", "js", "Function_Listeners_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".URL", "js", "URL_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Init", "js", "Init_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Bottom", "js", "View_Bottom_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Center.Grid", "js", "View_Center_Grid_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Center", "js", "View_Center_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top.Form", "js", "View_Top_Form_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top.Toolbar", "js", "View_Top_Toolbar_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".View.Top", "js", "View_Top_js.ftl", "utf-8", tempPath, root, "mac");
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "Epo.Erp."+model.getModuleName()+".Viewport", "js", "Viewport_js.ftl", "utf-8", tempPath, root, "mac");
 		//jsp
-		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "init", "jsp", "init_jsp.ftl", "utf-8", tempPath, root);
+		FreeMarkerEngine.analysisTemplateJs(model.getModuleNameLowerFirst(), "init", "jsp", "init_jsp.ftl", "utf-8", tempPath, root, "mac");
 	}
 }

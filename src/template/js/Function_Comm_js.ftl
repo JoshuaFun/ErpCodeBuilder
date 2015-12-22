@@ -122,11 +122,12 @@ function _getModifiedDatas(_datas) {
 	<#list model.gridColumnMappingList as item>
 		<#assign arr=(item?split(","))>
 		<#if (item_index == 0) >
-		r += ""  + _datas[i].${arr[1]};
+		r += "" + _datas[i].${arr[1]};
 		<#else>
-		r += "|"  + _datas[i].${arr[1]};
+		r += "|" + _datas[i].${arr[1]};
 		</#if>
 	</#list>
+		r += "|";
 		arr.push(r);
 	}
 	return arr;
