@@ -76,6 +76,8 @@ Epo.Erp.${model.moduleName}.View.Center.Grid = Ext.extend(Ext.grid.EditorGridPan
 		//导入
 		this.impButton = new Epo.Erp.ImpFile.Button({
 			procName : 'upload_xls_${model.moduleName}_act',
+			tempName : 'imp${model.moduleName}Data.xls',
+			iconCls : 'importButtons',
 			openSaveMode : true,
 			callback : function(actionResult){
 				if (actionResult.success = "1") {
