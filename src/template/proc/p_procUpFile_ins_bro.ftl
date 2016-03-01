@@ -4,6 +4,7 @@ ${'\t'}${'\t'}${'\t'}    a_tempTable   in varchar2,
 <#list model.formParams?keys as key>
 ${'\t'}${'\t'}${'\t'}    a_${key}      in <#if model.formParams[key]?index_of("number")!=-1>number<#else>varchar2</#if>,
 </#list>
+${'\t'}${'\t'}${'\t'}    a_userRowid   in number,
 ${'\t'}${'\t'}${'\t'}    a_out_success out varchar2) is
   /*
   -- ${model.devUserName} ${model.devDate}
