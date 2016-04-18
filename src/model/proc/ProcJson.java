@@ -1,11 +1,10 @@
 package model.proc;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class ProcJson extends BaseProc {
-	private Map<String,Object> formParamsArray = new HashMap<String,Object>();//表单数组参数
-	public Map<String, Object> getFormParamsArray() {
+	private LinkedHashMap<String,Object> formParamsArray = new LinkedHashMap<String,Object>();//表单数组参数
+	public LinkedHashMap<String, Object> getFormParamsArray() {
 		return formParamsArray;
 	}
 	public void putFormParamsArrayObj(String key, Object value) {
